@@ -19,7 +19,7 @@ const formatedDate = (date) => {
     return `${formattedDate}\t${formattedTime}`;
 };
 
-export const printEvents = async (message, file, next) => {
+export const printEvents = async (message, file) => {
     let date = formatedDate(new Date());
 
     try {
@@ -32,6 +32,5 @@ export const printEvents = async (message, file, next) => {
         );
     } catch (err) {
         console.log(err);
-        return next(err);
     }
 };
